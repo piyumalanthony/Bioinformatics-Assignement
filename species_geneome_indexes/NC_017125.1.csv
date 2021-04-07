@@ -1,5 +1,5 @@
-protein,start,end
-ABC transporter permease,427474,428505
+gene,start,stop
+helix-turn-helix transcriptional regulator,427474,428505
 LysR family transcriptional regulator,44664,45029
 helix-turn-helix domain-containing protein,315904,316398
 efflux transporter outer membrane subunit,155470,156954
