@@ -7,7 +7,7 @@ for index, row in xls.iterrows():
     data = {'start': [], 'stop': []}
     data['start'] = [row['Start_1'], row['Start_2'], row['Start_3'], row['Start_4']]
     data['stop'] = [row['End_1'], row['End_2'], row['End_3'], row['End_4']]
-    df = pd.DataFrame(data, index=['helix-turn-helix transcriptional regulator', 'LysR family transcriptional regulator',
+    df = pd.DataFrame(data, index=['ABC transporter permease', 'LysR family transcriptional regulator',
                                    'helix-turn-helix domain-containing protein',
                                    'efflux transporter outer membrane subunit'])
 
