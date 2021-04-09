@@ -6,6 +6,7 @@ import argparse
 
 
 def build_gene_sequence(gene: str, data_dir: str) -> None:
+    # global sequence
     gene = gene.replace('_', ' ')
     species = list(map(lambda each: each.strip('.csv'), filter(lambda each: '.csv' in each, os.listdir(data_dir))))
     sequences = []
