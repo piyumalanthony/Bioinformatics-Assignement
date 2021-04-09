@@ -7,11 +7,11 @@ import matplotlib
 import argparse
 
 
-def build_tree(alignment_file: str) -> Phylo.BaseTree.Tree:
-    alignemt = AlignIO.read(alignment_file, 'fasta')
-    calculator = DistanceCalculator('identity')
-    tree_counstructor = DistanceTreeConstructor()
-    tree = tree_counstructor.upgma(calculator.get_distance(alignemt))
+def build_phylogenetic_tree(alignment_file: str) -> Phylo.BaseTree.Tree:
+    multiple_sequence_alignemt = AlignIO.read(alignment_file, 'fasta')
+    dist_calculator = DistanceCalculator('identity')
+    tree_builder = DistanceTreeConstructor()
+    tree = tree_builder.upgma(dist_calculator.get_distance(multiple_sequence_alignemt))
     return tree
 
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
                         help="Don't show any outputs",
                         default=False)
     args = parser.parse_args()
-    tree = build_tree(args.alignment_file)
+    tree = build_phylogenetic_tree(args.alignment_file)
     output_name = args.alignment_file.strip('_alignment.fasta')
     if not args.silent:
         matplotlib.rc('font', size=6)
